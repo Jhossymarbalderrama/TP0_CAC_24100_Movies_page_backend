@@ -1,8 +1,8 @@
-package com.tp0_cac_24100_movie.entity;
+package com.tp0_cac_24100_movie.dto;
 
 import java.util.Date;
 
-public class Movie {
+public class MovieDTO {
     private Long id;
     private String title;
     private String poster;
@@ -14,8 +14,10 @@ public class Movie {
     private Long budget;
     private Long revenue;
     private String language;
-    
-    public Movie(Long id, String title, String poster, String backdrop, Date release_date, Long runtime,
+
+    public MovieDTO(){}
+
+    public MovieDTO(Long id, String title, String poster, String backdrop, Date release_date, Long runtime,
             String overview, String status, Long budget, Long revenue, String language) {
         this.id = id;
         this.title = title;
@@ -30,7 +32,7 @@ public class Movie {
         this.language = language;
     }
 
-    public Movie(String title, String poster, String backdrop, Date release_date, Long runtime,
+    public MovieDTO(String title, String poster, String backdrop, Date release_date, Long runtime,
             String overview, String status, Long budget, Long revenue, String language) {
         this.title = title;
         this.poster = poster;
@@ -134,12 +136,5 @@ public class Movie {
         this.language = language;
     }
 
-    @Override
-    public String toString() {
-        return "Movie [id=" + id + ", title=" + title + ", poster=" + poster + ", backdrop=" + backdrop
-                + ", release_date=" + release_date + ", runtime=" + runtime + ", overview=" + overview + ", status="
-                + status + ", budget=" + budget + ", revenue=" + revenue + ", language=" + language + "]";
-    }
     //#endregion
-        
 }
