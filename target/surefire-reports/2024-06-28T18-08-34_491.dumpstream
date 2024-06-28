@@ -1,0 +1,5 @@
+# Created at 2024-06-28T18:08:34.618
+Boot Manifest-JAR contains absolute paths in classpath 'd:\BlackJhossy\Curso Codo a Codo\Backend\TP0_CAC_24100_Movies\tp0_cac_24100_movie\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

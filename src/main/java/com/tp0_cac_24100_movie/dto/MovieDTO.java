@@ -136,5 +136,13 @@ public class MovieDTO {
         this.language = language;
     }
 
+    @Override
+    public String toString() {
+        return "MovieDTO [id=" + id + ", title=" + title + ", poster=" + poster + ", backdrop=" + backdrop
+                + ", release_date=" + release_date + ", runtime=" + runtime + ", overview=" + overview + ", status="
+                + status + ", budget=" + budget + ", revenue=" + revenue + ", language=" + language + "]";
+    }
+
+    
     //#endregion
 }

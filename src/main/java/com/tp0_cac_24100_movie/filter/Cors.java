@@ -1,0 +1,35 @@
+package com.tp0_cac_24100_movie.filter;
+
+import java.io.IOException;
+import java.util.List;
+
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebFilter(urlPatterns = {"/*"})
+public class Cors implements Filter{
+    private List<String> origins = List.of("http://localhost:8080", "http://127.0.0.1:8080");
+
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+
+		//esto viene desde el front
+		String origin = ((HttpServletRequest) request).getHeader("origin");
+
+        System.out.println(origin);
+		//ese front esta permido?
+		if (origin != null && origins.contains(origin)) {
+			((HttpServletResponse) response).addHeader("Access-Control-Allow-Origin", origin);
+			((HttpServletResponse) response).addHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
+			((HttpServletResponse) response).addHeader("Access-Control-Allow-Headers", "*");
+		}
+
+		chain.doFilter(request, response);
+	}
+}
