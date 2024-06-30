@@ -32,6 +32,7 @@ public class findMovieController extends HttpServlet {
                 resp.setContentType("application/json");
                 resp.setCharacterEncoding("UTF-8");
                 resp.getWriter().write(movieJSON);// ? Return Response Backend 
+                // resp.getWriter().println(movieJSON);
                 resp.setStatus(HttpServletResponse.SC_OK);
             }catch (Exception e) {
                 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Ocurrio un error para devolver la movie");
