@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="AR"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\balde\AppData\Local\Temp\surefire8285953038737959269\surefirebooter-20240701111226598_3.jar C:\Users\balde\AppData\Local\Temp\surefire8285953038737959269 2024-07-01T11-12-26_492-jvmRun1 surefire-20240701111226598_1tmp surefire_0-20240701111226598_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\balde\AppData\Local\Temp\surefire3017797519554708568\surefirebooter-20240701161202142_3.jar C:\Users\balde\AppData\Local\Temp\surefire3017797519554708568 2024-07-01T16-12-02_039-jvmRun1 surefire-20240701161202142_1tmp surefire_0-20240701161202142_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="d:\BlackJhossy\Curso Codo a Codo\Backend\TP0_CAC_24100_Movies\tp0_cac_24100_movie\target\test-classes;d:\BlackJhossy\Curso Codo a Codo\Backend\TP0_CAC_24100_Movies\tp0_cac_24100_movie\target\classes;C:\Users\balde\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\balde\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\balde\.m2\repository\com\mysql\mysql-connector-j\8.4.0\mysql-connector-j-8.4.0.jar;C:\Users\balde\.m2\repository\com\google\protobuf\protobuf-java\3.25.1\protobuf-java-3.25.1.jar;C:\Users\balde\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;C:\Users\balde\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.0\jackson-databind-2.10.0.jar;C:\Users\balde\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.0\jackson-annotations-2.10.0.jar;C:\Users\balde\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.0\jackson-core-2.10.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\balde\AppData\Local\Temp\surefire8285953038737959269\surefirebooter-20240701111226598_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\balde\AppData\Local\Temp\surefire3017797519554708568\surefirebooter-20240701161202142_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.9+11-LTS-201"/>

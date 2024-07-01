@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebFilter(urlPatterns = {"/*"})
 public class Cors implements Filter{
-    private List<String> origins = List.of("http://localhost:8080", "http://127.0.0.1:8080");
+    private List<String> origins = List.of("http://localhost:8080", "http://127.0.0.1:8080", "http://127.0.0.1:5500", "http://127.0.0.1:5500/pages/admin/admin.html");
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
