@@ -129,7 +129,7 @@ public class MovieImpl implements IMovie {
             state.setLong(1, id);
 
             if (state.executeUpdate() > 0) {
-                System.out.println("El Usuario con ID : " + id + " ha sido eliminado.");
+                System.out.println("La Movie con ID : " + id + " ha sido eliminado.");
             }
         } catch (Exception e) {
             System.out.println(e.toString());
