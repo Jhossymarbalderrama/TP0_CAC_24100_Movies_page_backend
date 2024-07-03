@@ -1,7 +1,6 @@
 package com.tp0_cac_24100_movie.controller;
 
 import java.io.IOException;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.ObjectMapper;

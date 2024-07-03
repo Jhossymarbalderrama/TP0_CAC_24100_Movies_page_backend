@@ -1,15 +1,5 @@
 package com.tp0_cac_24100_movie.dao;
 
-public class UserImpl{}
-    /**
-     * 1- Implementar la Interface IUser a la clase
-     * 2- Generar los metodos de la interface (contrato)
-     * 3- Codear:
-     *  crear para cada metodo su consulta Query para
-     *  la BD y obtener y retornar esa respuesta. (Tomar de referencia la clase MovieImpl)     
-     */
-    
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,22 +11,22 @@ import com.tp0_cac_24100_movie.entity.User;
 public class UserImpl implements IUser {
 
     /*
-     * Request a BD, obtengo una movie, por ID
+     * Request a BD, obtengo una user, por ID
      */
     @Override
-    public User findById(Integer id) {
-        Integer query = "select * from user where id = " + id;
+    public User findById(Long id) {
+        String query = "select * from user where id = " + id;
         User user = null;
         Connection conexion = null;
-    
+
         try {
             conexion = ConexionBD.connect();
             PreparedStatement state = conexion.prepareStatement(query);
             ResultSet resultSet = state.executeQuery(query);
-        
+
             if (resultSet.next()) {
                 user = new User(
-                        resultSet.getInteger(1),
+                        resultSet.getLong(1),
                         resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),
@@ -44,9 +34,7 @@ public class UserImpl implements IUser {
                         resultSet.getDate(6),
                         resultSet.getString(7),
                         resultSet.getString(8),
-                        resultSet.getInteger(9)
-                        
-                        );
+                        resultSet.getLong(9));
             }
         } catch (Exception e) {
             System.out.println(e.toString() + user);
@@ -58,7 +46,7 @@ public class UserImpl implements IUser {
     }
 
     /*
-     * Request a BD, obtengo listado de movie
+     * Request a BD, obtengo listado de users
      */ @Override
     public ArrayList<User> findAll() {
         ArrayList<User> listUser = new ArrayList<>();
@@ -72,18 +60,16 @@ public class UserImpl implements IUser {
 
             while (resultSet.next()) {
                 User user = new User(
-                        resultSet.getInteger(1),
+                        resultSet.getLong(1),
                         resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),
-                        resultSet.getSring(5),
+                        resultSet.getString(5),
                         resultSet.getDate(6),
                         resultSet.getString(7),
                         resultSet.getString(8),
-                        resultSet.getInteger(9),
-                        
-                        );
-            
+                        resultSet.getLong(9));
+
                 listUser.add(user);
             }
         } catch (Exception e) {
@@ -99,22 +85,20 @@ public class UserImpl implements IUser {
      */
     @Override
     public void create(UserDTO user) {
-        String query = "INSERT INTO user (id, first_name, last_name, email, password, birthday, image, country, id_type_user, ) values(?, ?, ?, ?, ?, ?, ?, ?, ?, )";
+        String query = "INSERT INTO user (firstname, lastname, email, password, birthday, image, country, id_type_user ) values(?, ?, ?, ?, ?, ?, ?, ?)";
         Connection conexion = null;
 
         try {
             conexion = ConexionBD.connect();
             PreparedStatement state = conexion.prepareStatement(query);
-            state.setInteger(1, user.getId());
-            state.setString(2, user.getFirst_name());
-            state.setString(3, user.getLast_name());
-            state.setString(4, new java.sql.String(user.getId().getTime()));
-            state.setString(5, user.getRuntime());
-            state.setDate(6, user.getBirthday());
-            state.setString(7, user.getImage());
-            state.setString(8, user.getCountry());
-            state.setInteger(9, user.getId_type_user());
-            
+            state.setString(1, user.getfirstname());
+            state.setString(2, user.getlastname());
+            state.setString(3, user.getEmail());
+            state.setString(4, user.getPassword());
+            state.setDate(5, new java.sql.Date(user.getBirthday().getTime()));
+            state.setString(6, user.getImage());
+            state.setString(7, user.getCountry());
+            state.setLong(8, user.getId_type_user());
 
             state.executeUpdate();
         } catch (Exception e) {
@@ -125,7 +109,7 @@ public class UserImpl implements IUser {
     }
 
     /*
-     * Request BD, ELimino un registro de la BD Movie
+     * Request BD, ELimino un registro de la BD User
      */
     @Override
     public void delete(Long id) {
@@ -135,7 +119,7 @@ public class UserImpl implements IUser {
         try {
             conexion = ConexionBD.connect();
             PreparedStatement state = conexion.prepareStatement(query);
-            state.setInteger(1, id);
+            state.setLong(1, id);
 
             if (state.executeUpdate() > 0) {
                 System.out.println("user con ID : " + id + " ha sido eliminado.");
@@ -149,25 +133,20 @@ public class UserImpl implements IUser {
 
     /*
      * Query a BD, Modificacion de registro user
-    */
+     */
     @Override
     public void update(UserDTO user) {
         StringBuilder query = new StringBuilder("UPDATE user SET ");
         boolean first = true;
         Connection conexion = null;
 
-        if (user.getId() != null) {
-            query.append(first ? "" : ", ").append("id = ?");
+        if (user.getfirstname() != null) {
+            query.append(first ? "" : ", ").append("firstname = ?");
             first = false;
         }
 
-        if (user.getFirst_name() != null) {
-            query.append(first ? "" : ", ").append("first_name = ?");
-            first = false;
-        }
-
-        if (user.getLast_name() != null) {
-            query.append(first ? "" : ", ").append("last_name = ?");
+        if (user.getlastname() != null) {
+            query.append(first ? "" : ", ").append("lastname = ?");
             first = false;
         }
 
@@ -196,12 +175,10 @@ public class UserImpl implements IUser {
             first = false;
         }
 
-        if (user.getid_type_user() != null) {
+        if (user.getId_type_user() != null) {
             query.append(first ? "" : ", ").append("id_type_user = ?");
             first = false;
         }
-
-    
 
         query.append(" WHERE id = ?");
 
@@ -210,52 +187,44 @@ public class UserImpl implements IUser {
             PreparedStatement state = conexion.prepareStatement(query.toString());
             int index = 1;
 
-            if(user.getId() != null){
-                state.setInteger(index++, user.getId());
+            if (user.getfirstname() != null) {
+                state.setString(index++, user.getfirstname());
             }
 
-            if(user.getFirst_name() != null){
-                state.setString(index++, user.getfirst_name());
+            if (user.getlastname() != null) {
+                state.setString(index++, user.getlastname());
             }
 
-            if(user.getLast_name() != null){
-                state.setString(index++, user.getLast_name());
+            if (user.getEmail() != null) {
+                state.setString(index++, user.getEmail());
             }
-            
-            if(user.getEmail() != null){
-                state.setString(index++, new java.sql.String(user.getEmail().getTime()));
-            }
-            
-            if(user.getPassword() != null){
+
+            if (user.getPassword() != null) {
                 state.setString(index++, user.getPassword());
             }
 
-            if(user.getBirthday() != null){
-                state.setDate(index++, user.getBirthday());
+            if (user.getBirthday() != null) {
+                state.setDate(index++, new java.sql.Date(user.getBirthday().getTime()));
             }
 
-            if(user.getImage() != null){
+            if (user.getImage() != null) {
                 state.setString(index++, user.getImage());
             }
 
-            if(user.getCountry() != null){
+            if (user.getCountry() != null) {
                 state.setString(index++, user.getCountry());
             }
 
-            if(user.getId_type_user() != null){
-                state.setInteger(index++, user.getId_type_user());
+            if (user.getId_type_user() != null) {
+                state.setLong(index++, user.getId_type_user());
             }
 
-        
-        }
-/* no sabia como agregarlo, revisar si esta bien
-            state.setInteger(index, user.getId());
+            state.setLong(index, user.getId());
             state.executeUpdate();
         } catch (Exception e) {
             System.out.println(e.toString());
         } finally {
             ConexionBD.disconnect(conexion);
         }
-    }*/
-        }
     }
+}
