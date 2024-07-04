@@ -1,6 +1,6 @@
 # 🎬 API | TP CAC 24100 Backend Java | Movies 🎞️
 <p>API dedicada para gestionar el CRUD de una página para movies</p>
-<p>📌 Demo: <a href='https://jhossymarbalderrama.github.io/TP0_CAC_24100_Movies_page/index.html' target='_blank'>↗️ Web TP Movie 👈<a/></p>
+<p>📌 Demo: <a href='https://jhossymarbalderrama.github.io/TP0_CAC_24100_Movies_page_frontend/index.html' target='_blank'>↗️ Web TP Movie 👈<a/></p>
 <p> (La web consume una api externa api.themoviedb.org | administrador solo backend local)</p>
 <p>📌 Repositorio Frontend: <a href='https://github.com/Jhossymarbalderrama/TP0_CAC_24100_Movies_page' target='_blank'>↗️ Go Repository 👈<a/></p>
   
@@ -36,7 +36,7 @@
 
 
 # 💻 Navegación de páginas
-<p>📌 Demo: <a href='https://jhossymarbalderrama.github.io/TP0_CAC_24100_Movies_page/index.html' target='_blank'>↗️ Web TP Movie 👈<a/> (La web consume una api externa api.themoviedb.org | administrador solo backend local)</p>
+<p>📌 Demo: <a href='https://jhossymarbalderrama.github.io/TP0_CAC_24100_Movies_page_frontend/index.html' target='_blank'>↗️ Web TP Movie 👈<a/> (La web consume una api externa api.themoviedb.org | administrador solo backend local)</p>
 
 ## 🏠 Home
 ![image](https://github.com/Jhossymarbalderrama/TP0_CAC_24100_Movies_page/assets/52534649/ea7a8442-c02b-4cd7-9d44-fd3c3e783894)
