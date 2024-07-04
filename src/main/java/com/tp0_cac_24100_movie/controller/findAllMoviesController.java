@@ -33,10 +33,10 @@ public class findAllMoviesController extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
                 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR,
-                        "Ocurrió un error al devolver las películas");
+                        "Ocurrió un error al devolver las Movies");
             }
         } else {
-            resp.sendError(HttpServletResponse.SC_NO_CONTENT, "No se encontraron películas");
+            resp.sendError(HttpServletResponse.SC_NO_CONTENT, "No se encontraron Movies");
         }
 
     }

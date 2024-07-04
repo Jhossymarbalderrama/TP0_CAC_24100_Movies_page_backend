@@ -16,7 +16,7 @@ public class deleteMovieController extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         MovieService svMovie = new MovieService();
-        String idParam = req.getParameter("id"); // ? Id de la movie a Eliminar
+        String idParam = req.getParameter("id");
 
         if (idParam != null && !idParam.isEmpty()) {
             try {

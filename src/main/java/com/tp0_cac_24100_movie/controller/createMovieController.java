@@ -23,8 +23,8 @@ public class createMovieController extends HttpServlet {
         String dataJson = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 
         if (dataJson != null && !dataJson.isEmpty()) {
-            ObjectMapper mapper = new ObjectMapper(); // ? Instancia Mapper (Objects | Json)
-            MovieDTO movie = mapper.readValue(dataJson, MovieDTO.class); // ? Creo una Instancia de MovieDTO con los datos que me llego del Frontend
+            ObjectMapper mapper = new ObjectMapper(); 
+            MovieDTO movie = mapper.readValue(dataJson, MovieDTO.class); 
             try {
                 svMovie.createMovie(movie);
 
